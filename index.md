@@ -1,6 +1,4 @@
----
-title: "Welcome to my website"
----
+
 # Welcome to my website
 
 I'm Yongyi Jiang.
