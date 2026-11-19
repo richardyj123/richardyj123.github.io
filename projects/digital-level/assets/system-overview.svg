@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420" role="img" aria-labelledby="title description">
+<title id="title">Digital level system architecture</title><desc id="description">MPU6050 sensor sends acceleration data over I2C to the ESP32-C3. A button supplies the calibration input. The controller drives a GC9A01 round display over SPI.</desc>
+<style>text{font-family:system-ui,-apple-system,Segoe UI,sans-serif;fill:#f2f6f8}.name{font-size:25px;font-weight:700}.sub{font-size:18px;fill:#aec0cc}.bus{font-size:17px;fill:#83d9d7}.box{fill:#132739;stroke:#3e5b70;stroke-width:2}.wire{fill:none;stroke:#83d9d7;stroke-width:3}</style>
+<rect x="22" y="65" width="255" height="140" rx="14" class="box"/>
+<text x="48" y="115" class="name">MPU6050</text><text x="48" y="151" class="sub">Acceleration → tilt</text><text x="48" y="181" class="sub">I²C address 0x68</text>
+<path d="M277 133H421" class="wire"/><circle cx="421" cy="133" r="5" fill="#83d9d7"/>
+<text x="300" y="105" class="bus">I²C</text><text x="297" y="166" class="bus">SDA 8 · SCL 9</text>
+<rect x="421" y="65" width="280" height="280" rx="14" fill="#19384a" stroke="#83d9d7" stroke-width="2"/>
+<text x="453" y="118" class="name">ESP32-C3</text><text x="453" y="150" class="sub">SuperMini controller</text>
+<path d="M453 176H669" stroke="#3e5b70"/>
+<text x="453" y="215" class="sub">Angle estimation</text><text x="453" y="250" class="sub">Smoothing + zero offset</text><text x="453" y="285" class="sub">Canvas rendering</text><text x="453" y="320" class="sub">Timer-driven updates</text>
+<rect x="22" y="255" width="255" height="90" rx="14" class="box"/>
+<text x="48" y="292" font-size="23" font-weight="700">Calibration button</text><text x="48" y="323" class="sub">Two-position reference</text>
+<path d="M277 300H421" class="wire"/><circle cx="421" cy="300" r="5" fill="#83d9d7"/>
+<text x="309" y="281" class="bus">GPIO 1</text>
+<path d="M701 133H835" class="wire"/><circle cx="835" cy="133" r="5" fill="#83d9d7"/>
+<text x="741" y="105" class="bus">SPI</text><text x="720" y="180" class="bus">SCLK 4</text><text x="720" y="208" class="bus">MOSI 6</text>
+<rect x="835" y="65" width="245" height="280" rx="14" class="box"/>
+<text x="864" y="114" class="name">GC9A01 TFT</text><text x="864" y="145" class="sub">1.28 in · 240 × 240</text>
+<circle cx="957" cy="244" r="67" fill="#0a1622" stroke="#3e5b70" stroke-width="2"/>
+<text x="957" y="240" font-size="30" font-weight="700" text-anchor="middle" fill="#f6b47c">ANGLE</text><text x="957" y="272" font-size="17" text-anchor="middle" fill="#aec0cc">one decimal place</text>
+<text x="23" y="393" class="sub">Signal paths and GPIO numbers reflect the implemented firmware.</text>
+</svg>

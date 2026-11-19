@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1622">
+  <meta name="description" content="Yongyi Jiang's digital level prototype: ESP32-C3 firmware, MPU6050 tilt sensing, a round color display, and a custom 3D-printed enclosure designed in SOLIDWORKS.">
+  <title>Digital Level | Yongyi Jiang</title>
+  <link rel="stylesheet" href="project.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R3F66N5DPG"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-R3F66N5DPG');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header>
+    <div class="container navigation">
+      <a class="logo" href="../../">YONGYI <span>JIANG</span></a>
+      <nav aria-label="Project navigation">
+        <a href="#overview">Overview</a><a href="#mechanical">Mechanical</a><a href="#hardware">Hardware</a><a href="#firmware">Firmware</a><a href="../../#projects">All projects</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero container">
+      <div class="hero-copy">
+        <a class="back-link" href="../../#projects">Portfolio / Independent projects</a>
+        <p class="eyebrow">Mechanical design · Electronics · Embedded C++</p>
+        <h1>A digital level.<br><span>Built from the inside out.</span></h1>
+        <p class="lead">A working tilt-measurement prototype that brings a custom enclosure, an inertial sensor, and embedded firmware together in one handheld device.</p>
+        <p class="hero-description">I designed the housing and controller mounts in SOLIDWORKS, integrated the electronics, and wrote Arduino firmware to turn sensor readings into a readable angle on a circular display.</p>
+        <div class="tags" aria-label="Technologies"><span>ESP32-C3</span><span>MPU6050</span><span>GC9A01 display</span><span>SOLIDWORKS</span><span>3D printing</span></div>
+        <a class="button" href="#overview">Explore the build</a>
+      </div>
+      <figure class="hero-photo">
+        <a href="assets/prototype.jpg" target="_blank" rel="noopener" aria-label="Open the full prototype photograph"><img src="assets/prototype.jpg" width="2048" height="1536" alt="Working digital level prototype in a red 3D-printed enclosure, with two front buttons and a round display reading minus 0.1"></a>
+        <figcaption><span class="status">Working prototype</span><span>Assembled device with live angle readout</span></figcaption>
+      </figure>
+    </section>
+
+    <div class="spec-band">
+      <dl class="container specs">
+        <div><dt>Controller</dt><dd>ESP32-C3 SuperMini</dd></div>
+        <div><dt>Tilt sensor</dt><dd>MPU6050 over I²C</dd></div>
+        <div><dt>Display</dt><dd>1.28 in · 240 × 240</dd></div>
+        <div><dt>Mechanical build</dt><dd>Custom printed enclosure</dd></div>
+      </dl>
+    </div>
+
+    <section class="section container" id="overview">
+      <div class="section-heading"><p class="eyebrow">The project</p><h2>From a sensor reading<br>to a usable instrument.</h2></div>
+      <div class="two-column overview-copy">
+        <div><h3>What I set out to build</h3><p>A compact digital level with a clear angle readout, a repeatable way to establish a zero reference, and an enclosure that holds the electronics in a practical form.</p><p>The engineering work spans the physical package and the behavior of the device: fitting the boards, routing the connections, smoothing the displayed value, and making calibration accessible from the front panel.</p></div>
+        <div><h3>My contribution</h3><ul class="contribution-list"><li>Enclosure, removable cover, and controller-mount CAD.</li><li>3D-printed parts and physical prototype assembly.</li><li>Integration of the controller, sensor, display, and button input.</li><li>Sensor bring-up, angle estimation, display rendering, and calibration firmware.</li></ul></div>
+      </div>
+      <div class="scope-note"><strong>Current result</strong><p>The prototype is assembled and photographed with a live angle readout. The reviewed firmware includes filtered tilt measurement and a two-position zero-reference routine. Measurement accuracy and long-term stability still need controlled testing.</p></div>
+    </section>
+
+    <section class="section shade" id="mechanical">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Mechanical development</p><h2>Designed around the hardware.</h2><p>The CAD and the physical build show how the enclosure developed from a component package into an assembled device.</p></div>
+        <div class="gallery">
+          <figure><a href="assets/enclosure-cad.png" target="_blank" rel="noopener" aria-label="Open the full enclosure CAD image"><img class="cad-image" src="assets/enclosure-cad.png" width="927" height="787" alt="SOLIDWORKS model of the red enclosure with a circular display opening, two button openings, and a four-fastener removable cover" loading="lazy"></a><figcaption><strong>Enclosure CAD</strong><span>Circular display opening, two front-panel button openings, and a removable four-fastener cover.</span></figcaption></figure>
+          <figure><a href="assets/prototype.jpg" target="_blank" rel="noopener" aria-label="Open the full assembled prototype image"><img src="assets/prototype.jpg" width="2048" height="1536" alt="Assembled red digital level showing the printed enclosure, recessed cover fasteners, two front buttons, and operating display" loading="lazy"></a><figcaption><strong>Assembled prototype</strong><span>The printed enclosure packages the display and controls; the cover gives access to the internal electronics.</span></figcaption></figure>
+        </div>
+        <div class="mechanical-notes">
+          <article><h3>Packaging and access</h3><p>The front panel locates the round screen and two physical controls. A separate lid provides access for wiring and assembly without rebuilding the enclosure.</p></article>
+          <article><h3>Controller retention</h3><p>Separate ESP32-C3 mount and clip models address board retention inside the housing. The mount uses equation-driven dimensions, including a 3 mm mount-thickness parameter.</p></article>
+          <article><h3>CAD to fabrication</h3><p>The project includes SOLIDWORKS parts and assemblies, STEP exports, STL files, and 3MF print files for the controller mount and enclosure components.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="hardware">
+      <div class="section-heading"><p class="eyebrow">Hardware integration</p><h2>A small system, with clear interfaces.</h2><p>The ESP32-C3 reads the sensor over I²C and drives the round color display over SPI. A front-panel button controls the calibration sequence.</p></div>
+      <figure class="system-diagram"><img src="assets/system-overview.svg" width="1100" height="420" alt="System diagram: MPU6050 connects to the ESP32-C3 over I2C using GPIO8 and GPIO9; the ESP32-C3 drives a GC9A01 display over SPI; a calibration button connects to GPIO1" loading="lazy"><figcaption>Connections implemented in the reviewed firmware.</figcaption></figure>
+      <div class="two-column hardware-detail">
+        <div><h3>Component choices</h3><dl class="components"><div><dt>ESP32-C3 SuperMini</dt><dd>Runs sensor acquisition, the calibration state machine, and display updates.</dd></div><div><dt>MPU6050 module</dt><dd>Supplies acceleration and angular-rate measurements. The current angle estimator uses X/Z acceleration.</dd></div><div><dt>GC9A01 circular TFT</dt><dd>A 1.28-inch, 240 × 240 color display for the numeric readout and graphical interface.</dd></div></dl></div>
+        <div><h3>Firmware pin assignment</h3><div class="table-wrap"><table><caption class="sr-only">Digital level GPIO assignments</caption><thead><tr><th scope="col">Interface</th><th scope="col">ESP32-C3 GPIO</th></tr></thead><tbody><tr><th scope="row">MPU6050 SDA / SCL</th><td>8 / 9</td></tr><tr><th scope="row">Display SCLK / MOSI</th><td>4 / 6</td></tr><tr><th scope="row">Display CS / DC / RST</th><td>7 / 3 / 10</td></tr><tr><th scope="row">Calibration button</th><td>1 · internal pull-up</td></tr></tbody></table></div><p class="small-note">Two buttons are visible on the enclosure. The reviewed firmware implements one calibration-button input. An audible-output pin is reserved, but an audible level indication is not active in this version.</p></div>
+      </div>
+    </section>
+
+    <section class="section shade" id="firmware">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Embedded software</p><h2>Make the reading useful.</h2><p>Arduino C++ firmware connects the physical measurement to a steady numeric readout and a guided zero-reference workflow.</p></div>
+        <div class="firmware-grid">
+          <article><p class="label">Measurement</p><h3>Estimate tilt from gravity</h3><p>The sensor is configured for a ±2 g acceleration range with a 21 Hz device filter. The firmware estimates tilt in the X–Z plane from the acceleration vector.</p><div class="formula"><code>angle = atan2(−a<sub>x</sub>, a<sub>z</sub>) × 180 / π</code></div><p class="small-note">This is an accelerometer-based tilt estimate. Movement and vibration can affect it; active gyroscope fusion is not part of the current estimator.</p></article>
+          <article><p class="label">Signal processing</p><h3>Smooth the displayed value</h3><p>An exponential smoothing step reduces changes between readings. The filter starts from the first measured angle rather than an arbitrary zero value.</p><div class="formula"><code>filtered += 0.2 × (angle − filtered)</code></div><p class="small-note">The smoothing factor trades response speed against visible fluctuation. Filter settings still need evaluation against a reference instrument.</p></article>
+          <article><p class="label">Display</p><h3>Render a clear readout</h3><p>A timer flag schedules measurement and display work in the main loop. The numeric value and graphical arcs are drawn into a 16-bit off-screen canvas, then transferred to the TFT over SPI.</p><p class="small-note">Angles are formatted to one decimal place: <strong>0.1° display resolution</strong>. That formatting does not establish 0.1° measurement accuracy.</p></article>
+        </div>
+        <div class="calibration">
+          <div><p class="eyebrow">Calibration interaction</p><h3>A two-position zero reference.</h3><p>The button input uses a 25 ms debounce interval. Two presses capture the readings used to calculate the offset.</p></div>
+          <ol class="calibration-steps"><li><strong>Capture the first position</strong><span>The first press stores the filtered angle.</span></li><li><strong>Reverse the device</strong><span>The display shows “TURN 180” while waiting for the second press.</span></li><li><strong>Apply the reference</strong><span>The mean of the two captured angles becomes the zero offset and is subtracted from subsequent readings.</span></li></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="development">
+      <div class="section-heading"><p class="eyebrow">Development and validation</p><h2>A working build, with a clear next step.</h2></div>
+      <div class="two-column validation">
+        <div><h3>Implemented in the project</h3><ul><li>A separate sensor diagnostic sketch for acceleration, angular rate, and temperature over serial.</li><li>I²C sensor initialization and SPI display integration.</li><li>Filtered angle calculation, a numeric readout, and the two-position calibration state machine.</li><li>Custom enclosure CAD, controller mounting parts, fabrication exports, and an assembled prototype.</li></ul></div>
+        <div><h3>Next validation work</h3><ul><li>Compare readings with a reference level across known angles.</li><li>Measure repeatability before and after the two-position calibration.</li><li>Check settling time and the effect of vibration and temperature.</li><li>Evaluate the final mounting alignment and behavior after reassembly.</li></ul></div>
+      </div>
+      <div class="closing"><div><p class="eyebrow">What this project demonstrates</p><h2>Connecting mechanical design<br>with embedded behavior.</h2><p>This build brings together CAD, practical assembly, hardware interfaces, and firmware debugging—the same cross-disciplinary approach I use when working with industrial equipment.</p></div><a class="button" href="mailto:richardjyy@outlook.com">Discuss this project</a></div>
+    </section>
+  </main>
+  <footer class="container"><span>Yongyi Jiang · Independent engineering project</span><a href="../../#projects">Back to portfolio</a></footer>
+</body>
+</html>
