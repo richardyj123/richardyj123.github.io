@@ -5,6 +5,12 @@ I'm Yongyi Jiang.
 
 This is my personal portfolio.
 
+I'm a Customer Service Engineer with 3+ years of hands-on experience supporting customers through equipment installation, 
+commissioning, troubleshooting, maintenance, and operator training. Installed and commissioned 50+ automated fiber-laser 
+cutting systems. Skilled in diagnosing mechanical, electrical, pneumatic, PLC/HMI, motion-control, and optical issues; explaining 
+technical findings to customers; and coordinating with global R&D to resolve equipment problems. Holds a master's degree in 
+Mechanical Engineering, with controlled-environment service experience and semiconductor manufacturing knowledge. 
+
 ## Projects
 
 Coming soon.
