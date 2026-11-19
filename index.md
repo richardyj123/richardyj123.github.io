@@ -9,8 +9,8 @@ This is my personal portfolio.
 
 Coming soon.
 
-## My Photos
-
+# Machines I worked on
+## Automated Sheet Laser
 ![Photo 1](5128ba3691fdd2e0729ba59451354ab1.jpg)
 
 ![Photo 2](56e08875492a21b33e088b5b8d62ee96.jpg)
