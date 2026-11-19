@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+<title id="title">Self-balancing car control architecture</title><desc id="desc">A 20 Hz speed controller sets a lean-angle target for a 100 Hz angle controller. The MPU6050 feeds the attitude estimate. Common and differential outputs mix into commands for two motors. Encoders feed average wheel speed and the steering loop. Steering gains are zero in the saved defaults.</desc>
+<defs><marker id="tip" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#83d9d7"/></marker></defs>
+<style>text{font-family:system-ui,-apple-system,Segoe UI,sans-serif;fill:#f2f6f8}.name{font-size:23px;font-weight:700}.small{font-size:18px;fill:#aec0cc}.signal{font-size:17px;fill:#83d9d7}.box{fill:#132739;stroke:#3e5b70;stroke-width:2}.line{fill:none;stroke:#83d9d7;stroke-width:2.5;marker-end:url(#tip)}.feedback{fill:none;stroke:#83d9d7;stroke-width:2;marker-end:url(#tip)}</style>
+<text x="25" y="34" class="small">SPEED → LEAN TARGET → BALANCE EFFORT → WHEEL COMMANDS</text>
+<rect x="25" y="95" width="210" height="115" rx="12" class="box"/><text x="49" y="132" class="name">Speed loop</text><text x="49" y="164" class="small" style="font-size:16px">Average wheel speed</text><text x="49" y="191" class="small">50 ms schedule</text>
+<rect x="335" y="95" width="220" height="115" rx="12" fill="#19384a" stroke="#83d9d7" stroke-width="2"/><text x="360" y="132" class="name">Angle loop</text><text x="360" y="164" class="small">Pitch feedback</text><text x="360" y="191" class="small">10 ms schedule</text>
+<rect x="665" y="95" width="155" height="115" rx="12" class="box"/><text x="692" y="141" class="name">Mixer</text><text x="683" y="178" class="small">Left / Right</text>
+<rect x="910" y="95" width="165" height="115" rx="12" class="box"/><text x="932" y="141" class="name">Drive</text><text x="930" y="178" class="small">Two motors</text>
+<path d="M235 151H335" class="line"/><text x="247" y="116" class="signal">Target</text><text x="247" y="140" class="signal">angle</text>
+<path d="M555 151H665" class="line"/><text x="571" y="126" class="signal">Common</text>
+<path d="M820 151H910" class="line"/><text x="838" y="126" class="signal">PWM</text>
+<rect x="335" y="298" width="220" height="105" rx="12" class="box"/><text x="359" y="337" class="name" style="font-size:20px">Attitude estimate</text><text x="359" y="369" class="small">MPU6050 + filter</text><path d="M445 298V210" class="feedback"/>
+<text x="460" y="258" class="signal">Pitch</text>
+<rect x="665" y="298" width="155" height="105" rx="12" class="box"/><text x="687" y="337" class="name">Steering</text><text x="685" y="369" class="small">50 ms loop</text><path d="M742 298V210" class="feedback"/><text x="755" y="248" class="signal">Differential</text>
+<rect x="910" y="298" width="165" height="105" rx="12" class="box"/><text x="929" y="337" class="name">Encoders</text><text x="932" y="369" class="small">Left + Right</text><path d="M992 210V298" class="feedback"/>
+<path d="M910 351H820" class="feedback"/><text x="836" y="332" class="signal">Δ speed</text>
+<path d="M992 403V458H130V210" class="feedback"/><text x="442" y="486" class="signal">Average wheel-speed feedback</text>
+<text x="25" y="535" class="small">Steering is implemented as a tuning path; its saved controller gains are zero.</text>
+</svg>
