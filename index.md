@@ -19,6 +19,17 @@ Mechanical Engineering, with controlled-environment service experience and semic
 ## Automated Tube Laser
 ![M1](144d5ccac57739ef933f1ccffe2f92c8.jpg)
 
+# Subsystems I worked on
+
+# What I do exactly at work:
+
+# Installation
+
+# Commissioning
+
+# Troubleshooting
+
+
 # Projects I work on outside of work
 
 
