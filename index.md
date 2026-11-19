@@ -1,9 +1,16 @@
 
-# Welcome to my website
+# Welcome to My Portfolio
+Yongyi Jiang
+Email: richardjyy@outlook.com
+Phone: 5182585774
+
+[About Me](#About me) | [Machines I worked on](#Machines I worked on) | [Projects](#Projects I work on outside of work)
+
+---
+
+# About-me
 
 I'm Yongyi Jiang.
-
-This is my personal portfolio.
 
 I'm a Customer Service Engineer with 3+ years of hands-on experience supporting customers through equipment installation, 
 commissioning, troubleshooting, maintenance, and operator training. Installed and commissioned 50+ automated fiber-laser 
