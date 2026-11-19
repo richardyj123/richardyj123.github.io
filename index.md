@@ -9,9 +9,12 @@ This is my personal portfolio.
 
 Coming soon.
 
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KLVH889Z"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'G-R3F66N5DPG');
 </script>
+
