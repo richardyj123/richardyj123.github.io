@@ -9,6 +9,12 @@ This is my personal portfolio.
 
 Coming soon.
 
+## My Photos
+
+![Photo 1](5128ba3691fdd2e0729ba59451354ab1.jpg)
+
+![Photo 2](56e08875492a21b33e088b5b8d62ee96.jpg)
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
