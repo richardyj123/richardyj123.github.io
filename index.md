@@ -11,10 +11,6 @@ cutting systems. Skilled in diagnosing mechanical, electrical, pneumatic, PLC/HM
 technical findings to customers; and coordinating with global R&D to resolve equipment problems. Holds a master's degree in 
 Mechanical Engineering, with controlled-environment service experience and semiconductor manufacturing knowledge. 
 
-## Projects
-
-Coming soon.
-
 # Machines I worked on
 ## Automated Sheet Laser
 ![Photo 1](5128ba3691fdd2e0729ba59451354ab1.jpg)
@@ -22,6 +18,10 @@ Coming soon.
 ![Photo 2](56e08875492a21b33e088b5b8d62ee96.jpg)
 ## Automated Tube Laser
 ![M1](144d5ccac57739ef933f1ccffe2f92c8.jpg)
+
+# Projects I work on outside of work
+
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
